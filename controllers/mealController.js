@@ -11,7 +11,7 @@ res.status(500).json({message:"Failed to create meals"})
 
 exports.getMeal = async (req,res) => {
     try {
-        const meals = await Meal.get({ user:req.user._id})
+        const meals = await Meal.find({ user:req.user._id})
         res.status(201).json(meals)
     } catch (err) {
         res.status(500).json({message:"Failed to get meals"})
