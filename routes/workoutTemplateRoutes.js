@@ -6,7 +6,7 @@ const {
   updateTemplate,
   deleteTemplate,
 } = require('../controllers/workoutTemplateController');
-const { protect, isTrainer } = require('../middleware/authMiddleware');
+const { protect, isTrainer } = require('../middelwares/authMiddleware');
 
 // All trainer routes are protected
 router.post('/', protect, isTrainer, createTemplate);
